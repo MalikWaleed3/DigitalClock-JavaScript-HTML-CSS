@@ -12,13 +12,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(7, 77, 49);
+  background-color: rgb(24, 9, 61);
 }
 
 .digital-clock {
   position: relative;
   color: white;
-  background-color:  rgb(7, 77, 49);
+  background-color: rgb(24, 9, 61);
   width: 425px;
   padding: 2px 45px;
   box-shadow: 0 5px 25px rgba(14, 21, 37, 0.8);
@@ -26,6 +26,8 @@ body {
   justify-content: center;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  transition: transform 0.5s;
 }
 
 .time {
@@ -85,7 +87,11 @@ body {
 
 .period {
   transform: translateY(-20px);
-  background: -webkit-linear-gradient(90deg, rgb(125, 120, 197), rgb(0, 204, 255));
+  background: -webkit-linear-gradient(
+    90deg,
+    rgb(125, 120, 197),
+    rgb(0, 204, 255)
+  );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
@@ -95,4 +101,85 @@ body {
   background: -webkit-linear-gradient(90deg, pink, rgb(255, 0, 0));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+}
+
+.calender {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgb(208, 6, 239),
+    rgb(196, 87, 174)
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.day-name,
+.day-number,
+.year {
+  margin-left: 8px;
+}
+
+.digital-clock:hover {
+  transform: scale(1.5);
+}
+
+.dot-menu {
+  z-index: 999;
+  list-style: none;
+  background-color: rgb(37, 16, 91);
+  padding: 10px 20px;
+  box-shadow: 0 5px 25px rgba(7, 10, 18, 0.8);
+  border-radius: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-format-text {
+  color: azure;
+  font-size: 0.9em;
+  margin-right: 20px;
+}
+
+.format-switch-btn {
+  width: 35px;
+  height: 15px;
+  background: grey;
+  border-radius: 75px;
+  box-shadow: inset 2px 2px 4px rgba(225, 225, 225, 0.1),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.format-switch-btn::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 0 5px 25px red;
+  transform: translateX(-10px);
+  transition: 0.3s ease;
+  transition-property: background, transform;
+}
+
+.format-switch-btn.active::before {
+  background: greenyellow;
+  box-shadow: 0 5px 25px greenyellow;
+  transform: translateX(10px);
 }
