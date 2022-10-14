@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <title>Digital Clock</title>
+  </head>
+  <body>
+    <div class="digital-clock">
+      <div class="time">
+        <span class="hour">08</span>
+        <span class="dots">:</span>
+        <span class="minutes">30</span>
+        <div class="right-side">
+          <span class="period">PM</span>
+          <span class="seconds">60</span>
+        </div>
+      </div>
+    </div>
+    <script>
+      function clock() {
+        const currenttime = new Date();
+
+        const hours = currenttime.getHours();
+        const minutes = currenttime.getMinutes();
+        const seconds = currenttime.getSeconds();
+        let period = "AM";
+
+        //Set the time period(Am/PM)
+        if (hours >= 12) {
+          period = "PM";
+        }
+
+        document.querySelector(".hour").innerHTML = hours;
+        document.querySelector(".minutes").innerHTML = minutes;
+        document.querySelector(".seconds").innerHTML = seconds;
+        document.querySelector(".period").innerHTML = period;
+      }
+
+      const updateClock = setInterval(clock, 1000);
+    </script>
+  </body>
+</html>
