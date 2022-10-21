@@ -1,1 +1,1 @@
-# GoogleDashboardExtension-JavaScript-HTML-CSS
+# Responsive-DigitalClock-JavaScript-HTML-CSS
